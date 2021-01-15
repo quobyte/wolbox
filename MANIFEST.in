@@ -1,0 +1,5 @@
+include LICENSE.rst
+graft wolbox/static
+graft wolbox/templates
+graft tests
+global-exclude *.pyc
