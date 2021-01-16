@@ -1,0 +1,3 @@
+venv/
+wolbox.egg-info/
+wolbox/__pycache__/

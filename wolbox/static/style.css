@@ -100,19 +100,6 @@ nav ul li a, nav ul li span, header .action {
   resize: vertical;
 }
 
-.danger {
-	background-color: #fc8f8e;
-	display: flex;
-	font-size: 180%;
-	justify-content: center;
-	align-items: center;
-	margin: 1em;
-}
-
-input.danger {
-  color: #cc2f2e;
-}
-
 input[type=submit] {
   align-self: start;
   min-width: 10em;
@@ -144,11 +131,10 @@ input[type=submit] {
 	font-size: 180%;
 }
 
-.column {
-  flex: 500%;
-  padding: 5px;
+.Up {
+  background-color: #2fcc2e;
 }
 
-.row {
-  display: flex;
+.Down {
+  background-color: #cc2f2e;
 }
