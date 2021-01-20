@@ -2,8 +2,26 @@
 
 {% macro host_block(host) %}
   <form method="post">
-    <td><input type="text" name="hostname" id="hostname" class="{{host["status"]}}" value="{{host["hostname"]}}" readonly></td>
-  <td><input type="text" name="hostname" id="mac" class="input" value="{{host["mac"]}}" readonly></td>
-  <td><input type="submit" value="Wake!" class="submit"></td>
+    <td>
+      <input type="text"
+             name="hostname"
+             id="hostname"
+             class="{{host["status"]}}"
+             value="{{host["hostname"]}}"
+             readonly>
+    </td>
+    <td>
+      <input type="text"
+             name="hostname"
+             id="mac"
+             class="input"
+             value="{{host["mac"]}}"
+             readonly>
+    </td>
+    <td>
+      <input type="submit"
+             value="Wake!"
+             class="submit">
+    </td>
   </form>
 {% endmacro %}

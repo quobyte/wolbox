@@ -60,5 +60,7 @@ def discover():
             continue
         for h in hosts:
             fqdn = h["hostname"]+"."+domain
-            if fqdn.lower() == discovered[d]["hostname"][0]["name"].lower():
+            hostinfo = discovered[d]["hostname"]
+            discovered_host = next(iter(hostinfo), {"name": "none"})["name"]
+            if fqdn.lower() == discovered_host.lower():
                 h["status"] = "Up"

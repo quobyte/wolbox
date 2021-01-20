@@ -21,9 +21,9 @@ RUN addgroup --system --gid 1337 wolbox \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
-COPY --from=initializer /run.sh /run.sh
-COPY --from=initializer /wolbox /wolbox
-COPY --from=initializer /venv /venv
+COPY --chown=wolbox --from=initializer /run.sh /run.sh
+COPY --chown=wolbox --from=initializer /wolbox /wolbox
+COPY --chown=wolbox --from=initializer /venv /venv
 
 EXPOSE 8080/tcp
 USER wolbox
