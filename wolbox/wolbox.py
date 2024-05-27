@@ -56,11 +56,11 @@ def discover():
     for h in hosts:
         h["status"] = "Down"
     for d in discovered:
-        if d == "stats" or d == "runtime":
-            continue
-        for h in hosts:
-            fqdn = h["hostname"]+"."+domain
-            hostinfo = discovered[d]["hostname"]
-            discovered_host = next(iter(hostinfo), {"name": "none"})["name"]
-            if fqdn.lower() == discovered_host.lower():
-                h["status"] = "Up"
+        if isinstance(discovered[d], dict):
+            if "hostname" in discovered[d]:
+                for h in hosts:
+                    fqdn = h["hostname"] + "." + domain
+                    hostinfo = discovered[d]["hostname"]
+                    discovered_host = next(iter(hostinfo), {"name": "none"})["name"]
+                    if fqdn.lower() == discovered_host.lower():
+                        h["status"] = "Up"
